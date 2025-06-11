@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syed Daud Ali - AI Engineer Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --dark-color: #1e293b;
+            --light-color: #f8fafc;
+            --accent-color: #f59e0b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        /* Header Styles */
+        header {
+            height: 100vh;
+            background: linear-gradient(rgba(30, 41, 59, 0.8), rgba(30, 41, 59, 0.8)), 
+                        url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1080&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 2rem;
+        }
+        
+        .header-content {
+            max-width: 800px;
+        }
+        
+        .header-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .header-content h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            font-weight: 400;
+            color: var(--accent-color);
+        }
+        
+        .header-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-info a:hover {
+            color: var(--accent-color);
+        }
+        
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 2rem;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-20px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(30, 41, 59, 0.9);
+            z-index: 1000;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+        }
+        
+        /* Experience Section */
+        .experience-item {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+        
+        .experience-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+        
+        .experience-date {
+            color: var(--accent-color);
+            font-weight: 500;
+        }
+        
+        .experience-company {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+        
+        .experience-description ul {
+            list-style-position: inside;
+            margin-left: 1rem;
+        }
+        
+        .experience-description li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Projects Slider */
+        .swiper {
+            width: 100%;
+            height: 400px;
+            margin-bottom: 3rem;
+        }
+        
+        .project-slide {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            height: 350px;
+        }
+        
+        .project-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .tech-tag {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        
+        .project-description {
+            margin-bottom: 1rem;
+        }
+        
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .skill-category {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+        }
+        
+        .skill-category h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .skill-category ul {
+            list-style-type: none;
+        }
+        
+        .skill-category li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .skill-category li::before {
+            content: '▹';
+            color: var(--accent-color);
+            margin-right: 0.5rem;
+        }
+        
+        /* Education Section */
+        .education-item {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+        
+        .education-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+        
+        .education-date {
+            color: var(--accent-color);
+            font-weight: 500;
+        }
+        
+        .education-institution {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .header-content h2 {
+                font-size: 1.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .experience-header, .education-header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Syed Daud Ali</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+    
+    <!-- Header -->
+    <header id="about">
+        <div class="header-content">
+            <h1>Syed Daud Ali</h1>
+            <h2>Artificial Intelligence Engineer</h2>
+            <p>Expert in AI, ML, NLP, RAG, and Hugging Face technologies with practical experience in developing cutting-edge AI solutions.</p>
+            <div class="contact-info">
+                <a href="tel:+923070994508"><i class="fas fa-phone"></i> +92 307 0994508</a>
+                <a href="mailto:adaud378@gmail.com"><i class="fas fa-envelope"></i> adaud378@gmail.com</a>
+                <a href="https://www.linkedin.com/in/syed-daud-ali-naqvi-46a2a5249/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/syeddaudali" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+        </div>
+        <a href="#experience" class="scroll-down"><i class="fas fa-chevron-down"></i></a>
+    </header>
+    
+    <!-- Experience Section -->
+    <section id="experience">
+        <h2 class="section-title">Professional Experience</h2>
+        
+        <div class="experience-item">
+            <div class="experience-header">
+                <h3 class="experience-title">Associate Software Engineer</h3>
+                <span class="experience-date">October 2024 – Present</span>
+            </div>
+            <div class="experience-company">Vaival Technologies</div>
+            <div class="experience-description">
+                <ul>
+                    <li>Developed an AI-powered email system using GPT-3.5 for automated email generation, scheduling, and dispatch. Integrated PostgreSQL for storage, Streamlit for UI, and a background scheduler for seamless email delivery.</li>
+                    <li>Built a voice query system using Whisper, FAISS, and ElevenLabs for transcription, search, and text-to-speech, with PDF integration.</li>
+                    <li>Implemented a RAG pipeline with enhanced prompts using a vector database and GPT-4o-mini, created a multi-PDF query system with memory management.</li>
+                    <li>Built a FastAPI microservice featuring CRUD operations with Pydantic validation and custom exception handling.</li>
+                    <li>Fine-tuned a GPT-2 model with LoRA for efficient training on a small dataset using Hugging Face's Trainer.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="experience-item">
+            <div class="experience-header">
+                <h3 class="experience-title">Data Science Trainee</h3>
+                <span class="experience-date">July 2024 – October 2024</span>
+            </div>
+            <div class="experience-company">Knowledge Streams</div>
+            <div class="experience-description">
+                <ul>
+                    <li>Learned TensorFlow, PyTorch, and Keras for machine learning and deep learning algorithms.</li>
+                    <li>Implemented data analysis projects using Python libraries, enhancing data manipulation skills.</li>
+                    <li>Visualized datasets with Power BI, Seaborn and Matplotlib, improving insights extraction.</li>
+                    <li>Applied SQL for database management and querying, boosting data handling efficiency.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        
+        <!-- Slider main container -->
+        <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                    <div class="project-slide">
+                        <h3 class="project-title">Kaggle Competition Skin Cancer Detection with 3D-TBP</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">PyTorch</span>
+                            <span class="tech-tag">CNN</span>
+                            <span class="tech-tag">Image Processing</span>
+                        </div>
+                        <div class="project-description">
+                            <p>Developed a skin cancer detection system using CNN algorithm on 3D total body photos. Achieved precise classification of malignant and benign lesions with PyTorch. Utilized advanced image processing techniques for accurate analysis.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="swiper-slide">
+                    <div class="project-slide">
+                        <h3 class="project-title">License Number Plate Detection and OCR System</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">YOLOv8</span>
+                            <span class="tech-tag">Streamlit</span>
+                            <span class="tech-tag">OCR</span>
+                            <span class="tech-tag">Computer Vision</span>
+                        </div>
+                        <div class="project-description">
+                            <p>Collected and processed car video data for license plate detection using YOLOv8 and OCR. Achieved high accuracy in real-time plate recognition with optimized preprocessing. Designed a system to log vehicle entries/exits, stored for easy retrieval. Built a Streamlit interface to query vehicle records by entering license numbers.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="swiper-slide">
+                    <div class="project-slide">
+                        <h3 class="project-title">AI-Powered Email Generation System</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">GPT-3.5</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Streamlit</span>
+                            <span class="tech-tag">FastAPI</span>
+                        </div>
+                        <div class="project-description">
+                            <p>Developed an AI system that automatically generates, schedules, and dispatches emails using GPT-3.5. Integrated with PostgreSQL for data storage and Streamlit for user interface. Implemented a background scheduler for seamless email delivery and tracking.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Add pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2 class="section-title">Core Skills</h2>
+        
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>Programming & Tools</h3>
+                <ul>
+                    <li>Python</li>
+                    <li>SQL</li>
+                    <li>Git</li>
+                    <li>Jupyter Notebook</li>
+                    <li>VS Code</li>
+                    <li>Google Colab</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category">
+                <h3>AI/ML Frameworks</h3>
+                <ul>
+                    <li>TensorFlow</li>
+                    <li>PyTorch</li>
+                    <li>Keras</li>
+                    <li>Scikit-learn</li>
+                    <li>LangChain</li>
+                    <li>Hugging Face</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category">
+                <h3>Databases</h3>
+                <ul>
+                    <li>PostgreSQL</li>
+                    <li>Pinecone</li>
+                    <li>ChromaDB</li>
+                    <li>FAISS</li>
+                    <li>Oracle</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category">
+                <h3>Specializations</h3>
+                <ul>
+                    <li>Natural Language Processing</li>
+                    <li>Retrieval-Augmented Generation</li>
+                    <li>Computer Vision</li>
+                    <li>Data Analysis</li>
+                    <li>Model Fine-Tuning</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Education Section -->
+    <section id="education">
+        <h2 class="section-title">Education & Certifications</h2>
+        
+        <div class="education-item">
+            <div class="education-header">
+                <h3 class="education-title">BS Software Engineering</h3>
+                <span class="education-date">September 2020 – June 2024</span>
+            </div>
+            <div class="education-institution">University of Agriculture, Faisalabad</div>
+            <p>Specialization in Machine Learning, Big Data Analytics, NLP, and Digital Image Processing </p>
+        </div>
+        
+        <div class="education-item">
+            <h3 class="education-title">Certifications</h3>
+            <ul>
+                <li>AI For Everyone | Deeplearning.ai | Aug 2023</li>
+                <li>Supervised Machine Learning: Regression and Classification | Deeplearning.ai | July 2023</li>
+                <li>Presidential Initiative for Artificial Intelligence and Computing | PIAIC | July 2022 – June 2024</li>
+                <li>Foundational Certificate in Gen Ai and LLM's | Vaival Technologies | Oct 2024 – Jan 2025</li>
+            </ul>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <div style="text-align: center; margin-bottom: 2rem;">
+            <p>I'm currently looking for new opportunities in AI engineering and machine learning. Whether you have a question or just want to say hi, I'll get back to you as soon as possible!</p>
+        </div>
+        <div style="text-align: center;">
+            <a href="mailto:adaud378@gmail.com" style="display: inline-block; background-color: var(--primary-color); color: white; padding: 1rem 2rem; border-radius: 4px; text-decoration: none; font-weight: bold;">Say Hello</a>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/syed-daud-ali-naqvi-46a2a5249/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/syeddaudali" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="mailto:adaud378@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="tel:+923070994508"><i class="fas fa-phone"></i></a>
+        </div>
+        <p>© 2024 Syed Daud Ali. All rights reserved.</p>
+    </footer>
+    
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    
+    <script>
+        // Initialize Swiper
+        const swiper = new Swiper('.swiper', {
+            // Optional parameters
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Change navbar background on scroll
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                document.querySelector('nav').style.backgroundColor = 'rgba(30, 41, 59, 1)';
+            } else {
+                document.querySelector('nav').style.backgroundColor = 'rgba(30, 41, 59, 0.9)';
+            }
+        });
+    </script>
+</body>
+</html>
