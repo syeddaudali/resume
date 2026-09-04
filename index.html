@@ -117,7 +117,7 @@ gtag('config', 'G-BLMS2V8T7T', {
     <header id="about">
         <div class="header-content">
             <h1>Syed Daud Ali</h1>
-            <h2>Associate AI Engineer</h2>
+            <h2>AI Engineer</h2>
             <p>Specialist in LLMs, RAG pipelines, workflow automation, and full-stack AI systems. Building production-ready intelligent solutions that deliver real impact.</p>
             <div class="contact-info">
                 <a href="tel:+923070994508"><i class="fas fa-phone"></i> +92 307 0994508</a>
@@ -140,10 +140,11 @@ gtag('config', 'G-BLMS2V8T7T', {
             <div class="experience-company">Vulcan Tech</div>
             <div class="experience-description">
                 <ul>
-                    <li><strong>AI Newsletter Automation:</strong> Engineered an end-to-end n8n pipeline ingesting AI news from Beehiiv and The Rundown AI, summarizing content via LLMs, generating contextual images with Gemini API, and delivering personalized HTML email briefings through GHL — reducing manual curation to zero.</li>
+                    <li><strong>AI Newsletter Automation:</strong> Engineered an end-to-end n8n pipeline ingesting AI news from Beehiiv and The Rundown AI, summarizing content via LLMs, generating contextual images with Gemini API, and delivering personalized HTML email briefings through GHL to 60+ subscribers.</li>
                     <li><strong>Custom n8n Node Development:</strong> Architected and published custom n8n nodes (eluna) in Node.js, implementing resource/operation lifecycle management that enabled structured third-party API integrations and extended native workflow automation capabilities.</li>
                     <li><strong>Medical Drug Reviews Topic Analysis:</strong> Designed a Streamlit analytics platform processing unstructured patient reviews using BERTopic (HDBSCAN + UMAP) with sentence embeddings, surfacing latent topics and delivering actionable patient insights previously inaccessible from raw feedback data.</li>
-                    <li><strong>AI Question-Answering System:</strong> Developed a production-grade full-stack QA platform (FastAPI + React) with RAG-based vector retrieval, enabling contextually accurate LLM responses over a custom knowledge base via scalable async APIs designed for enterprise-level query throughput.</li>
+                    <li><strong>AI Question-Answering System (Document Butler):</strong> Developed a production-grade full-stack RAG platform (FastAPI + Next.js) with Qdrant vector retrieval and Groq LLaMA-3.3-70B, deployed on AWS EC2 with Nginx reverse proxy and GitHub Actions CI/CD.</li>
+                    <li><strong>WhatsApp Complaint & Live-Agent Support System:</strong> Built a FastAPI backend integrating Meta's WhatsApp Cloud API with a stateful bot for complaint registration and status tracking, supporting 4 concurrent agents and 50+ complaint workflows, with JWT-secured dashboards and real-time live-chat handoff.</li>
                 </ul>
             </div>
         </div>
@@ -156,13 +157,13 @@ gtag('config', 'G-BLMS2V8T7T', {
             <div class="experience-company">Vaival Technologies</div>
             <div class="experience-description">
                 <ul>
+                    <li><strong>Sales Force Location & Dwell Time Tracking:</strong> Built a FastAPI GPS tracking system using Haversine distance calculations to detect shop entry/exit events, logging visit dwell time and idle time per field agent.</li>
+                    <li><strong>Shop Verification & Face Liveness Pipeline:</strong> Built a shop verification pipeline using Gemini Flash VLM for shop-name extraction and a TinyLiveness (EfficientNet-B0, ONNX) model for anti-spoofing liveness checks.</li>
                     <li>Developed an AI-powered email system using GPT-3.5, Streamlit, PostgreSQL, and background scheduler for automated generation and dispatch.</li>
                     <li>Built a voice query system using Whisper, FAISS, and ElevenLabs with PDF integration for transcription, semantic search, and text-to-speech.</li>
-                    <li>Created multi-PDF chatbot using LangChain with memory management and topic-specific assistance.</li>
+                    <li>Created a multi-PDF chatbot using LangChain with memory management and topic-specific assistance.</li>
                     <li>Fine-tuned GPT-2 with LoRA using Hugging Face's Trainer for efficient training on small datasets.</li>
-                    <li>Integrated Pinecone, FAISS, and ChromaDB into LangChain-based RAG pipelines.</li>
-                    <li>Built HR Performance Evaluation System using FastAPI and Pandas for metrics from JIRA logs.</li>
-                    <li>Trained YOLOv8 model for container parking detection and deployed Kline Analyzer on AWS EC2 using Groq LLaMA3 for real-time insights.</li>
+                    <li>Trained a YOLOv8 model for container parking detection and deployed Kline Analyzer on AWS EC2 using Groq LLaMA3 for real-time insights.</li>
                 </ul>
             </div>
         </div>
@@ -195,19 +196,19 @@ gtag('config', 'G-BLMS2V8T7T', {
                             <span class="tech-tag">n8n</span><span class="tech-tag">LLMs</span><span class="tech-tag">Gemini API</span><span class="tech-tag">Node.js</span><span class="tech-tag">GHL</span>
                         </div>
                         <div class="project-description">
-                            <p>End-to-end automation pipeline collecting AI news from Beehiiv and The Rundown AI, summarizing and categorizing content using LLMs, generating contextual images via Gemini API, and delivering personalized HTML email briefings to subscribers — eliminating manual curation entirely.</p>
+                            <p>End-to-end automation pipeline collecting AI news from Beehiiv and The Rundown AI, summarizing and categorizing content using LLMs, generating contextual images via Gemini API, and delivering personalized HTML email briefings to 60+ subscribers — eliminating manual curation entirely.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="swiper-slide">
                     <div class="project-slide">
-                        <h3 class="project-title">AI Question-Answering Platform</h3>
+                        <h3 class="project-title">AI Question-Answering Platform (Document Butler)</h3>
                         <div class="project-tech">
-                            <span class="tech-tag">FastAPI</span><span class="tech-tag">React</span><span class="tech-tag">RAG</span><span class="tech-tag">Vector DB</span><span class="tech-tag">Python</span>
+                            <span class="tech-tag">FastAPI</span><span class="tech-tag">Next.js</span><span class="tech-tag">RAG</span><span class="tech-tag">Qdrant</span><span class="tech-tag">Groq LLaMA-3.3-70B</span>
                         </div>
                         <div class="project-description">
-                            <p>Production-grade full-stack QA platform with RAG-based vector retrieval enabling contextually accurate LLM responses over a custom knowledge base. Built with async FastAPI backend and React frontend, designed for enterprise-level query throughput.</p>
+                            <p>Production-grade RAG platform with Qdrant vector retrieval and Groq LLaMA-3.3-70B enabling contextually accurate LLM responses over a custom knowledge base. Deployed on AWS EC2 with Nginx reverse proxy and GitHub Actions CI/CD.</p>
                         </div>
                     </div>
                 </div>
@@ -220,6 +221,54 @@ gtag('config', 'G-BLMS2V8T7T', {
                         </div>
                         <div class="project-description">
                             <p>Streamlit analytics platform processing unstructured patient drug reviews using BERTopic with sentence embeddings, HDBSCAN clustering, and UMAP visualization — surfacing hidden topics and generating GPT-powered summaries for actionable patient insights at scale.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="project-slide">
+                        <h3 class="project-title">WhatsApp Complaint & Live-Agent Support System</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">FastAPI</span><span class="tech-tag">Meta Cloud API</span><span class="tech-tag">JWT</span><span class="tech-tag">SQLAlchemy</span>
+                        </div>
+                        <div class="project-description">
+                            <p>FastAPI backend integrating Meta's WhatsApp Cloud API with a stateful conversational bot for complaint registration and status tracking. Features JWT-secured admin/agent dashboards and real-time multi-agent live-chat handoff with least-busy auto-routing, supporting 4 concurrent agents and 50+ complaint workflows.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="project-slide">
+                        <h3 class="project-title">Shop Verification & Face Liveness Pipeline</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">Gemini Flash VLM</span><span class="tech-tag">TinyLiveness</span><span class="tech-tag">EfficientNet-B0</span><span class="tech-tag">RapidFuzz</span>
+                        </div>
+                        <div class="project-description">
+                            <p>Shop verification pipeline using Gemini Flash VLM for shop-name extraction from sparse video frames and a TinyLiveness (EfficientNet-B0, ONNX) model for anti-spoofing liveness detection, with fuzzy text matching for validation.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="project-slide">
+                        <h3 class="project-title">Shop Video Deduplication System</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">CLIP</span><span class="tech-tag">Cosine Similarity</span><span class="tech-tag">PostgreSQL</span><span class="tech-tag">SQLAlchemy</span>
+                        </div>
+                        <div class="project-description">
+                            <p>Duplicate video detection pipeline for a shop upload pipeline using CLIP embeddings (clip-ViT-B-32) with mean-pooling and cosine similarity thresholding to flag redundant submissions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="project-slide">
+                        <h3 class="project-title">Sales Force Location & Dwell Time Tracking</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">FastAPI</span><span class="tech-tag">Haversine</span><span class="tech-tag">Geolocation</span>
+                        </div>
+                        <div class="project-description">
+                            <p>GPS-based tracking backend using Haversine distance calculations to detect shop entry/exit events in real time, automatically logging visit dwell time and idle/unproductive time per field agent.</p>
                         </div>
                     </div>
                 </div>
@@ -243,7 +292,7 @@ gtag('config', 'G-BLMS2V8T7T', {
                             <span class="tech-tag">PyTorch</span><span class="tech-tag">CNN</span><span class="tech-tag">Image Processing</span><span class="tech-tag">Kaggle</span>
                         </div>
                         <div class="project-description">
-                            <p>CNN-based classifier in PyTorch to identify malignant vs benign lesions on 3D total body photos. Developed for Kaggle competition using advanced image processing techniques for precise dermatological classification.</p>
+                            <p>CNN-based classifier in PyTorch to identify malignant vs benign lesions on 3D total body photos. Developed for a Kaggle competition using advanced image processing techniques for precise dermatological classification.</p>
                         </div>
                     </div>
                 </div>
@@ -273,19 +322,31 @@ gtag('config', 'G-BLMS2V8T7T', {
             <div class="skill-category">
                 <h3>Languages & Frontend</h3>
                 <ul>
-                    <li>Python</li><li>SQL</li><li>JavaScript</li><li>React</li><li>HTML / CSS</li>
+                    <li>Python</li><li>SQL</li><li>JavaScript</li><li>React</li><li>Next.js</li><li>HTML / CSS</li>
                 </ul>
             </div>
             <div class="skill-category">
                 <h3>Frameworks</h3>
                 <ul>
-                    <li>FastAPI</li><li>Streamlit</li><li>LangChain</li><li>CrewAI</li><li>TensorFlow / PyTorch / Keras</li><li>Scikit-learn</li>
+                    <li>FastAPI</li><li>Streamlit</li><li>LangChain</li><li>LangGraph</li><li>CrewAI</li><li>TensorFlow / PyTorch / Keras</li><li>Scikit-learn</li>
                 </ul>
             </div>
             <div class="skill-category">
                 <h3>LLM & AI/ML</h3>
                 <ul>
                     <li>RAG & Vector Retrieval</li><li>Prompt Engineering</li><li>Embeddings & Semantic Search</li><li>BERTopic / Topic Modeling</li><li>YOLOv8 / CNN / OpenCV</li><li>Model Fine-Tuning (LoRA)</li>
+                    <li>LangGraph (StateGraph, ToolNode, ReAct Agents)</li>
+                    <li>MCP (Model Context Protocol) — FastMCP, Servers/Clients</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Computer Vision</h3>
+                <ul>
+                    <li>Face Recognition — InsightFace / ArcFace, SCRFD, Anti-Spoofing</li>
+                    <li>Gait Recognition — MediaPipe Pose</li>
+                    <li>OCR — PaddleOCR, Gemini, Mistral, EasyOCR</li>
+                    <li>Object Detection — YOLOv8</li>
+                    <li>Video Similarity — CLIP Embeddings</li>
                 </ul>
             </div>
             <div class="skill-category">
@@ -295,15 +356,27 @@ gtag('config', 'G-BLMS2V8T7T', {
                 </ul>
             </div>
             <div class="skill-category">
-                <h3>Databases</h3>
+                <h3>Databases & Vector Stores</h3>
                 <ul>
-                    <li>PostgreSQL</li><li>Pinecone</li><li>FAISS</li><li>ChromaDB</li><li>Oracle</li>
+                    <li>PostgreSQL</li><li>Pinecone</li><li>FAISS</li><li>ChromaDB</li><li>Qdrant</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>DevOps & Cloud</h3>
+                <ul>
+                    <li>AWS EC2 & Docker</li>
+                    <li>AWS ECR (Image Build/Push, IAM Roles)</li>
+                    <li>Nginx Reverse Proxy</li>
+                    <li>Systemd (Auto-Start/Restart)</li>
+                    <li>Certbot / Let's Encrypt HTTPS with DuckDNS</li>
+                    <li>GitHub Actions CI/CD (SSH Auto-Deploy)</li>
+                    <li>Git & GitHub</li>
                 </ul>
             </div>
             <div class="skill-category">
                 <h3>Dev & AI Tools</h3>
                 <ul>
-                    <li>Git & GitHub</li><li>AWS EC2 & Docker</li><li>Hugging Face</li><li>Whisper / ElevenLabs / Ollama</li><li>VS Code / Jupyter / Colab</li>
+                    <li>Hugging Face</li><li>Whisper / ElevenLabs / Ollama</li><li>VS Code (Remote-SSH) / Jupyter / Colab</li>
                 </ul>
             </div>
         </div>
@@ -372,4 +445,3 @@ gtag('config', 'G-BLMS2V8T7T', {
 </body>
 
 </html>
-
